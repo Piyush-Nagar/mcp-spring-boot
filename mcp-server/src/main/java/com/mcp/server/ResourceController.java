@@ -14,8 +14,12 @@ public class ResourceController {
     }
 
     @GetMapping("/resources/{id}")
-    public ResponseEntity<Response> getResourceById(@PathVariable("id") String id) {
-        Response response = Response.builder().id("1").name("Name").build();
-        return ResponseEntity.ok(response);
+    public ResponseEntity<Resource> getResourceById(@PathVariable("id") String id) {
+        Resource resource = Resource.builder().id("1").name("Piyush  Nagar")
+                .fathersName("Lalit Nagar")
+                .mothersName("Madhubala")
+                .age("36")
+                .build();
+        return ResponseEntity.ok(resource);
     }
 }

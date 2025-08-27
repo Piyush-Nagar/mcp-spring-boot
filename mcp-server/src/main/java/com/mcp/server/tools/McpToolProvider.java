@@ -1,5 +1,7 @@
-package com.mcp.server;
+package com.mcp.server.tools;
 
+import com.mcp.server.ResourceController;
+import com.mcp.server.Resource;
 import lombok.AllArgsConstructor;
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.http.ResponseEntity;
@@ -7,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class McpControllerExample {
+public class McpToolProvider {
 
     private final ResourceController resourceController;
     @Tool(name = "getResources", description = "Get all the Resources")
@@ -16,9 +18,8 @@ public class McpControllerExample {
     }
 
     @Tool(name = "getResourceById", description = "Get all the resource by Id")
-    Response getResourceById(String id) {
-        ResponseEntity<Response> response = resourceController.getResourceById(id);
+    Resource getResourceById(String id) {
+        ResponseEntity<Resource> response = resourceController.getResourceById(id);
         return response.getBody();
     }
-
 }

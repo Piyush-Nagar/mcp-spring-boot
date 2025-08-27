@@ -11,14 +11,13 @@ import com.mcp.mcpresponse.result.tool.Property;
 import com.mcp.mcpresponse.result.tool.ToolDefinition;
 import com.mcp.openai.OpenAIClient;
 import com.mcp.openai.chat.ChatMessage;
-import com.mcp.openai.chat.request.*;
 import com.mcp.openai.chat.request.Properties;
+import com.mcp.openai.chat.request.*;
 import com.mcp.openai.chat.response.ChatApiResponse;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -36,9 +35,6 @@ public class SseClient {
     }
 
     public void startListening() {
-
-
-
 
         Flux<String> eventStream = webClient.get()
                 .uri("/sse")

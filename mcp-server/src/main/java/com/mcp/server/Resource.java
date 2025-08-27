@@ -9,8 +9,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Response {
+public class Resource {
 
     private String id;
     private String name;
+    private String fathersName;
+    private String mothersName;
+    private String age;
 }
