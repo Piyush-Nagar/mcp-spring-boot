@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: "Test Generator Service"
+  profiles:
+    active: ${PROFILE:dev}
+  data:
+    mongodb:
+      host: "localhost"
+      port: 27017
+      database: "test_case_generator"
+      auto-index-creation: true
+  cloud:
+    compatibility-verifier:
+      enabled: false
+
+server.port: 8081

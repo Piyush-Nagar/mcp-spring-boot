@@ -1,0 +1,11 @@
+spring:
+  ai:
+    mcp:
+      server:
+        type: SYNC       # Ensures sync (not streaming/SSE) mode
+        name: my-mcp-server
+        version: 1.0.0
+        capabilities:
+          tool: true
+          prompt: true
+          completion: true
